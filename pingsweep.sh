@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# This is a ping sweeper script for /24 networks
+
+# Use:
+# ./pingsweep.sh <network_portion_ip>
+
+# Remember to give execution privileges to the file: chmod +x ./pingsweep
+
+
 # Input validation
 if [ "$1" == "" ]; then
     echo "You must enter the network portion of the IP address"
