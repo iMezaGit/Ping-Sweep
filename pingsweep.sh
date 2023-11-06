@@ -18,18 +18,18 @@ else
     mask="$1"
 
     # loop
-    echo "Scanning the network $1.0/24"
+    echo -e "\n[*] Scanning the network $1.0/24...\n"
     for ((ip = 1; ip <= 224; ip++)); do
         ping $mask.$ip -c 1 >> $results_temp &
         sleep 0.02
     done
 
     # filters
-    cat "$results_temp" | grep '64 bytes' | awk '{print $4,$6}' | tr -d ':' | sort -t '.' -k 4,4n
+    cat "$results_temp" | grep '64 bytes' | cut -d' ' -f4 | tr -d ':' | sort -t '.' -k 4,4n
 
     # Counting the results
     count=$(cat "$results_temp" | grep '64 bytes' | wc -l)
-    echo "Hosts found: $count"
+    echo -e "\n[*] Hosts found: $count"
 
     # clean the temp file
     rm "$results_temp"
