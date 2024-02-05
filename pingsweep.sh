@@ -19,7 +19,7 @@ else
 
     # loop
     echo -e "\n[*] Scanning the network $1.0/24...\n"
-    for ((ip = 1; ip <= 224; ip++)); do
+    for ((ip = 1; ip <= 254; ip++)); do
         ping $mask.$ip -c 1 >> $results_temp &
         sleep 0.02
     done
