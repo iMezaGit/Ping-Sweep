@@ -9,7 +9,7 @@
     <p>You can use an ICMP sweep, along with other techniques such as ARP scanning, to discover the hosts of a network you are auditing. These are going to be the future targets you might want to attack as a pentester, expanding the attack surface for possible vulnerabilities.</p>
   <h5>Defensive Perspective - SOC/NOC</h5>
     <p>As a network administrator you can block ICMP echo requests from outside sources, this gives you the possibility to detect an unrecognized device in the network that can be malicious, and ensure the devices are working correctly.</p>
-    <details>
+     <hr><details>
   <summary><h2>How it works</h2></summary>
   <p>A ping sweeper is actually not a complex tool, is based on the ICMP echo request which we can do with the bash command</p><p><code>ping [ip_address]</code>, if the target IP address allows ping requests it will respond with a message similar to the image below:</p><p><code>64 bytes from [ip_address] [flags]</code>, this can be later filtered with a Bash command.</p>
     <img src="images/6.png" alt="ping">
@@ -33,6 +33,7 @@
     <h3>Summary</h3>
     <p>This project helped me putting into practice my bash scripting and networking knowledge, and is, actually, very usefull, I personally use it very often when solving vulnerable boxes to perfom host discovery, in addition to other tools. though I am happy with the result it stills has room for improvements, for example you can add a filter to also extract the TTL from the request, this is a usefull numberas, since you can estimate the Operating System of the host you send the ping request.</p>
     </details>
+    <hr>
     <h2>Script</h2>
     <p>The output of the script looks like the following:</p>
     <img src="images/7.png" alt="scipt">
